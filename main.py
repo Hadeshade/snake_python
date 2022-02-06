@@ -64,13 +64,13 @@ class Snake:
         
         #Lógica para movimentar os quadrados (a cobra)
         if self.direction == 'left':
-            self.x[0] -= SIZE
+            self.x[0] -= SIZE 
         if self.direction == 'right':
-            self.x[0] += SIZE
+            self.x[0] += SIZE 
         if self.direction == 'down':
-            self.y[0] += SIZE
+            self.y[0] += SIZE 
         if self.direction == 'up':
-            self.y[0] -= SIZE
+            self.y[0] -= SIZE 
 
         self.draw()
     
@@ -133,6 +133,15 @@ class Game:
                 raise "Game over"
 
         #Colisão com paredes (futuro):
+        #Caso passe do tamanho da tela no eixo X
+        if(self.snake.x[0] < 0):
+            self.snake.x[0] = 999
+        if(self.snake.x[0] > 1000):
+            self.snake.x[0] = 1
+        if(self.snake.y[0] < 0):
+            self.snake.y[0] = 799
+        if(self.snake.y[0] > 800):
+            self.snake.y[0] = 1
         
 
     def display_score(self):
